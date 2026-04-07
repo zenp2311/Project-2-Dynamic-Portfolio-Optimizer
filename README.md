@@ -30,7 +30,8 @@ A local server will start, and your browser will automatically open the dashboar
 ---
 
 ## 3. DRIVER Workflow Summary
-DRIVER plugin (https://github.com/CinderZhang/driver-plugin)
+DRIVER plugin (https://github.com/CinderZhang/driver-plugin).
+
 We utilized the **DRIVER** framework to structure the development sequentially:
 
 1. **DEFINE (开题调研):** We began by identifying the problem and reviewing existing libraries. We selected `yfinance` for data ingestion, `PyPortfolioOpt` for heavy-lifting math algorithms, and `Streamlit` with `Plotly` for a dynamic UI, capturing this in the Product Overview.
