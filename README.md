@@ -53,6 +53,17 @@ We utilized the **DRIVER** framework to structure the development sequentially:
 - **AI (Cognition Mate):** Tasked with generating boilerplate architecture, orchestrating Streamlit rendering loops, building the heavy-lifting Plotly visual generation logic, and suggesting structural data extraction bug-fixes (the yfinance MultiIndex resolution).
 - **Human (Pilot-in-Command):** Maintained absolute human centrality by establishing the initial product vision, breaking down the milestones, validating the raw financial math from `PyPortfolioOpt`, and enforcing stringent data scrubbing requirements (forward filling and dropping NAs to prevent silent solver crashes) prior to visualization. 
 
+## 5. Open-Source Attribution & Usage Disclosure
+
+This application was made possible by the following open-source frameworks and libraries. Their documentation and active maintainers provided the foundation for this project:
+
+* **Python (3.9+):** The core programming environment.
+* **Streamlit:** Utilized for the frontend web framework, enabling the reactive UI, sidebar constraints, and real-time state management without a separate backend.
+* **PyPortfolioOpt (`pypfopt`):** The primary quantitative engine used to calculate historical expected returns, generate the sample covariance matrix, and solve the Markowitz Mean-Variance Optimization boundaries.
+* **yfinance:** Utilized for data ingestion to reliably query and download historical daily market prices.
+* **Plotly:** Powered the dynamic, interactive visualization of the Efficient Frontier and the 2,000-simulation Monte Carlo scatter plot.
+* **Pandas & NumPy:** Provided the essential data structures for time-series manipulation, NA-handling, and the underlying matrix algebra required for risk calculation.
+
 **Reflections on the Workflow:**
 The tight feedback loops encouraged by the DRIVER framework prevented massive code debt. Instead of prompting for a massive un-testable script, breaking the application into raw data outputs -> raw math outputs -> UI -> Visualization meant that critical errors (like the `yfinance` MultiIndex API change) were caught immediately in Milestone 1, rather than silently cascading through Milestone 4. 
 
